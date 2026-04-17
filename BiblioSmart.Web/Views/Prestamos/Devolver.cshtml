@@ -1,0 +1,19 @@
+﻿@model BiblioSmart.Core.Entities.Prestamo
+@{ ViewData["Title"] = "Registrar Devolución"; }
+
+<h2 class="mb-4">Registrar Devolución</h2>
+<div class="alert alert-warning">¿Confirma la devolución de este préstamo?</div>
+
+<dl class="row">
+    <dt class="col-sm-3">Libro</dt><dd class="col-sm-9">@Model.Libro?.Titulo</dd>
+    <dt class="col-sm-3">Miembro</dt><dd class="col-sm-9">@Model.Miembro?.NombreCompleto</dd>
+    <dt class="col-sm-3">Fecha Préstamo</dt><dd class="col-sm-9">@Model.FechaPrestamo.ToShortDateString()</dd>
+    <dt class="col-sm-3">Fecha Esperada</dt><dd class="col-sm-9">@Model.FechaDevolucionEsperada.ToShortDateString()</dd>
+    <dt class="col-sm-3">Estado</dt><dd class="col-sm-9">@Model.Estado</dd>
+</dl>
+
+<form asp-action="Devolver">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-success">Confirmar Devolución</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

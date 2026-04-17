@@ -1,0 +1,45 @@
+﻿@model BiblioSmart.Core.Entities.Prestamo
+@{ ViewData["Title"] = "Nuevo Préstamo"; }
+
+<h2 class="mb-4">Registrar Nuevo Préstamo</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">Miembro</label>
+                <select asp-for="MiembroId" class="form-select">
+                    <option value="">-- Seleccione un miembro --</option>
+                    @foreach (var m in (IEnumerable<BiblioSmart.Core.Entities.Miembro>)ViewBag.Miembros)
+                    {
+                        <option value="@m.Id">@m.NombreCompleto (@m.Cedula)</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Libro</label>
+                <select asp-for="LibroId" class="form-select">
+                    <option value="">-- Seleccione un libro --</option>
+                    @foreach (var l in (IEnumerable<BiblioSmart.Core.Entities.Libro>)ViewBag.Libros)
+                    {
+                        if (l.CantidadDisponible > 0)
+                        {
+                            <option value="@l.Id">@l.Titulo - @l.Autor (Disponibles: @l.CantidadDisponible)</option>
+                        }
+                        else
+                        {
+                            <option value="@l.Id" disabled>@l.Titulo - @l.Autor (No disponible)</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="FechaDevolucionEsperada" class="form-label">Fecha de Devolución Esperada</label>
+                <input asp-for="FechaDevolucionEsperada" class="form-control" type="date" />
+            </div>
+            <button type="submit" class="btn btn-success">Registrar Préstamo</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>

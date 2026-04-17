@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center py-4">
+    <h1 class="display-4 fw-bold">📚 BiblioSmart</h1>
+    <p class="lead text-muted">Sistema Inteligente de Gestión Bibliotecaria</p>
+    <hr class="my-4" style="border-color:#6c27be; border-width:2px; width:100px; margin:auto;" />
+</div>
+
+<div class="card mb-4" style="background: linear-gradient(135deg,#6c27be,#9b59b6); color:#fff; border-radius:16px;">
+    <div class="card-body text-center py-4">
+        <h4 class="mb-1">✏️ Desarrollado por</h4>
+        <h2 class="fw-bold mb-1">Romaldi Joel Mosquea</h2>
+        <h5 class="mb-0 text-warning">Matrícula: 20231910</h5>
+    </div>
+</div>
+
+<div class="row g-4 mt-2">
+    <div class="col-md-4">
+        <div class="card h-100 text-center p-3">
+            <div class="card-body">
+                <div style="font-size:3rem;">📖</div>
+                <h5 class="card-title mt-2" style="color:#6c27be;">Libros</h5>
+                <p class="card-text text-muted">Registra, edita y busca los libros del catálogo.</p>
+                <a asp-controller="Libros" asp-action="Index" class="btn btn-primary mt-2">Ver Libros</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 text-center p-3">
+            <div class="card-body">
+                <div style="font-size:3rem;">👤</div>
+                <h5 class="card-title mt-2" style="color:#6c27be;">Miembros</h5>
+                <p class="card-text text-muted">Administra los miembros registrados en la biblioteca.</p>
+                <a asp-controller="Miembros" asp-action="Index" class="btn btn-success mt-2">Ver Miembros</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 text-center p-3">
+            <div class="card-body">
+                <div style="font-size:3rem;">🔄</div>
+                <h5 class="card-title mt-2" style="color:#6c27be;">Préstamos</h5>
+                <p class="card-text text-muted">Gestiona préstamos activos y devoluciones.</p>
+                <a asp-controller="Prestamos" asp-action="Index" class="btn btn-info mt-2">Ver Préstamos</a>
+            </div>
+        </div>
+    </div>
+</div>

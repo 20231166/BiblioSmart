@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BiblioSmart.Core.Entities.Miembro>
+@{ ViewData["Title"] = "Miembros"; }
+
+<h2 class="mb-4">Miembros de la Biblioteca</h2>
+
+@if (TempData["Exito"] != null)
+{
+    <div class="alert alert-success">@TempData["Exito"]</div>
+}
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form method="get">
+            <div class="input-group">
+                <input type="text" name="buscar" value="@ViewBag.Buscar" class="form-control" placeholder="Buscar por nombre o cédula..." />
+                <button class="btn btn-primary" type="submit">Buscar</button>
+                <a href="/Miembros" class="btn btn-secondary">Limpiar</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 text-end">
+        <a asp-action="Create" class="btn btn-success">+ Nuevo Miembro</a>
+    </div>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th><th>Cédula</th><th>Correo</th><th>Teléfono</th><th>Fecha Registro</th><th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.NombreCompleto</td>
+                <td>@m.Cedula</td>
+                <td>@m.Correo</td>
+                <td>@m.Telefono</td>
+                <td>@m.FechaRegistro.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@m.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Details" asp-route-id="@m.Id" class="btn btn-sm btn-info">Ver</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

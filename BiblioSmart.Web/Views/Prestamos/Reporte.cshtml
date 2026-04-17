@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BiblioSmart.Core.Entities.Prestamo>
+@{ ViewData["Title"] = "Reporte"; }
+
+<h2 class="mb-4">Reporte de Inventario</h2>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary">
+            <div class="card-body text-center">
+                <h5 class="card-title">Total Ejemplares</h5>
+                <h2>@ViewBag.TotalLibros</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-warning">
+            <div class="card-body text-center">
+                <h5 class="card-title">Préstamos Activos</h5>
+                <h2>@ViewBag.LibrosPrestados</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success">
+            <div class="card-body text-center">
+                <h5 class="card-title">Disponibles</h5>
+                <h2>@ViewBag.LibrosDisponibles</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Préstamos Activos</h4>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr><th>Libro</th><th>Miembro</th><th>Fecha Préstamo</th><th>Fecha Devolución</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Where(p => p.Estado == "Activo"))
+        {
+            <tr>
+                <td>@p.Libro?.Titulo</td>
+                <td>@p.Miembro?.NombreCompleto</td>
+                <td>@p.FechaPrestamo.ToShortDateString()</td>
+                <td>@p.FechaDevolucionEsperada.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary mt-2">Volver</a>

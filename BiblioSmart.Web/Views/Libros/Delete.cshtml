@@ -1,0 +1,18 @@
+﻿@model BiblioSmart.Core.Entities.Libro
+@{ ViewData["Title"] = "Eliminar Libro"; }
+
+<h2 class="mb-4">Eliminar Libro</h2>
+<div class="alert alert-danger">¿Está seguro que desea eliminar este libro?</div>
+
+<dl class="row">
+    <dt class="col-sm-3">Título</dt><dd class="col-sm-9">@Model.Titulo</dd>
+    <dt class="col-sm-3">Autor</dt><dd class="col-sm-9">@Model.Autor</dd>
+    <dt class="col-sm-3">ISBN</dt><dd class="col-sm-9">@Model.ISBN</dd>
+    <dt class="col-sm-3">Categoría</dt><dd class="col-sm-9">@Model.Categoria</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
