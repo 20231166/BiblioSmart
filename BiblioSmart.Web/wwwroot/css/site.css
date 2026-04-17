@@ -19,6 +19,17 @@ html {
 
 body {
   margin-bottom: 60px;
+  color: #12343b;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(217, 131, 36, 0.08);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #d98324;
+  box-shadow: 0 0 0 0.2rem rgba(217, 131, 36, 0.18);
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {

@@ -3,16 +3,20 @@
 }
 
 <div class="text-center py-4">
-    <h1 class="display-4 fw-bold">📚 BiblioSmart</h1>
-    <p class="lead text-muted">Sistema Inteligente de Gestión Bibliotecaria</p>
-    <hr class="my-4" style="border-color:#6c27be; border-width:2px; width:100px; margin:auto;" />
+    <h1 class="display-4 fw-bold">&#128218; BiblioSmart</h1>
+    <p class="lead text-muted">Sistema web para el control de libros, miembros y prestamos.</p>
+    <p class="mx-auto text-secondary" style="max-width:700px;">
+        Organiza tu catalogo, registra usuarios y lleva seguimiento de las devoluciones desde una sola plataforma.
+    </p>
+    <hr class="my-4" style="border-color:#d98324; border-width:2px; width:120px; margin:auto;" />
 </div>
 
-<div class="card mb-4" style="background: linear-gradient(135deg,#6c27be,#9b59b6); color:#fff; border-radius:16px;">
+<div class="card mb-4" style="background: linear-gradient(135deg,#12343b,#1f5c66); color:#fff; border-radius:18px;">
     <div class="card-body text-center py-4">
-        <h4 class="mb-1">✏️ Desarrollado por</h4>
-        <h2 class="fw-bold mb-1">Romaldi Joel Mosquea</h2>
-        <h5 class="mb-0 text-warning">Matrícula: 20231910</h5>
+        <span class="badge rounded-pill text-dark mb-3" style="background:#ffd089;">Proyecto Final - Programacion III</span>
+        <h4 class="mb-1">Desarrollado por</h4>
+        <h2 class="fw-bold mb-1">Sheyssi Puente Adames</h2>
+        <h5 class="mb-0" style="color:#ffd089;">Matricula: 20231166</h5>
     </div>
 </div>
 
@@ -20,9 +24,9 @@
     <div class="col-md-4">
         <div class="card h-100 text-center p-3">
             <div class="card-body">
-                <div style="font-size:3rem;">📖</div>
-                <h5 class="card-title mt-2" style="color:#6c27be;">Libros</h5>
-                <p class="card-text text-muted">Registra, edita y busca los libros del catálogo.</p>
+                <div style="font-size:3rem;">&#128214;</div>
+                <h5 class="card-title mt-2" style="color:#12343b;">Libros</h5>
+                <p class="card-text text-muted">Registra, edita y busca los libros del catalogo.</p>
                 <a asp-controller="Libros" asp-action="Index" class="btn btn-primary mt-2">Ver Libros</a>
             </div>
         </div>
@@ -30,8 +34,8 @@
     <div class="col-md-4">
         <div class="card h-100 text-center p-3">
             <div class="card-body">
-                <div style="font-size:3rem;">👤</div>
-                <h5 class="card-title mt-2" style="color:#6c27be;">Miembros</h5>
+                <div style="font-size:3rem;">&#128100;</div>
+                <h5 class="card-title mt-2" style="color:#12343b;">Miembros</h5>
                 <p class="card-text text-muted">Administra los miembros registrados en la biblioteca.</p>
                 <a asp-controller="Miembros" asp-action="Index" class="btn btn-success mt-2">Ver Miembros</a>
             </div>
@@ -40,10 +44,10 @@
     <div class="col-md-4">
         <div class="card h-100 text-center p-3">
             <div class="card-body">
-                <div style="font-size:3rem;">🔄</div>
-                <h5 class="card-title mt-2" style="color:#6c27be;">Préstamos</h5>
-                <p class="card-text text-muted">Gestiona préstamos activos y devoluciones.</p>
-                <a asp-controller="Prestamos" asp-action="Index" class="btn btn-info mt-2">Ver Préstamos</a>
+                <div style="font-size:3rem;">&#128260;</div>
+                <h5 class="card-title mt-2" style="color:#12343b;">Prestamos</h5>
+                <p class="card-text text-muted">Gestiona prestamos activos y devoluciones.</p>
+                <a asp-controller="Prestamos" asp-action="Index" class="btn btn-info mt-2">Ver Prestamos</a>
             </div>
         </div>
     </div>

@@ -7,42 +7,52 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <style>
-        body { background-color: #f5f0ff; }
+        :root {
+            --brand-ink: #12343b;
+            --brand-deep: #1f5c66;
+            --brand-accent: #d98324;
+            --brand-soft: #f5efe6;
+        }
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(217,131,36,0.14), transparent 32%),
+                linear-gradient(180deg, #f8f6f1 0%, #f2ece3 100%);
+        }
         .navbar {
-            background: linear-gradient(135deg, #6c27be 0%, #9b59b6 100%) !important;
-            box-shadow: 0 3px 10px rgba(108,39,190,0.4);
+            background: linear-gradient(135deg, var(--brand-ink) 0%, var(--brand-deep) 100%) !important;
+            box-shadow: 0 12px 30px rgba(18,52,59,0.20);
         }
         .navbar-brand { font-weight: 700; font-size: 1.3rem; }
-        .nav-link:hover { color: #ffd700 !important; }
-        .footer { background: linear-gradient(135deg, #6c27be 0%, #9b59b6 100%); color: #fff; }
-        .btn-primary { background-color: #6c27be; border-color: #6c27be; }
-        .btn-primary:hover { background-color: #5a1fa0; border-color: #5a1fa0; }
-        .btn-success { background-color: #f07d00; border-color: #f07d00; }
-        .btn-success:hover { background-color: #d46b00; border-color: #d46b00; }
-        .btn-info { background-color: #00b4d8; border-color: #00b4d8; color:#fff; }
-        .btn-info:hover { background-color: #0096b7; border-color: #0096b7; color:#fff; }
-        .table thead { background: linear-gradient(135deg, #6c27be, #9b59b6); color: #fff; }
-        .card { border: none; box-shadow: 0 2px 12px rgba(108,39,190,0.15); border-radius: 12px; }
-        .card-header { background: linear-gradient(135deg, #6c27be, #9b59b6); color: #fff; border-radius: 12px 12px 0 0 !important; }
-        h1, h2, h3 { color: #6c27be; }
+        .nav-link:hover { color: #ffd089 !important; }
+        .footer { background: linear-gradient(135deg, var(--brand-ink) 0%, var(--brand-deep) 100%); color: #fff; }
+        .btn-primary { background-color: var(--brand-ink); border-color: var(--brand-ink); }
+        .btn-primary:hover { background-color: #0d262b; border-color: #0d262b; }
+        .btn-success { background-color: var(--brand-accent); border-color: var(--brand-accent); color: #fff; }
+        .btn-success:hover { background-color: #bf6f17; border-color: #bf6f17; color: #fff; }
+        .btn-info { background-color: var(--brand-deep); border-color: var(--brand-deep); color:#fff; }
+        .btn-info:hover { background-color: #184a52; border-color: #184a52; color:#fff; }
+        .table thead { background: linear-gradient(135deg, var(--brand-ink), var(--brand-deep)); color: #fff; }
+        .card { border: none; box-shadow: 0 10px 30px rgba(18,52,59,0.10); border-radius: 18px; }
+        .card-header { background: linear-gradient(135deg, var(--brand-ink), var(--brand-deep)); color: #fff; border-radius: 18px 18px 0 0 !important; }
+        h1, h2, h3 { color: var(--brand-ink); }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark mb-4">
         <div class="container">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">📚 BiblioSmart</a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">&#128218; BiblioSmart</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">🏠 Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Libros" asp-action="Index">📖 Libros</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Miembros" asp-action="Index">👤 Miembros</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Prestamos" asp-action="Index">🔄 Préstamos</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Prestamos" asp-action="Reporte">📊 Reportes</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Libros" asp-action="Index">Libros</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Miembros" asp-action="Index">Miembros</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Prestamos" asp-action="Index">Prestamos</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Prestamos" asp-action="Reporte">Reportes</a></li>
                 </ul>
-                <span class="navbar-text text-warning fw-bold">✏️ Romaldi Joel Mosquea · 20231910</span>
+                <span class="navbar-text text-warning fw-bold">Sheyssi Puente Adames · 20231166</span>
             </div>
         </div>
     </nav>
@@ -53,9 +63,9 @@
     </div>
     <footer class="footer mt-5 py-3 text-center">
         <div class="container">
-            📚 <strong>BiblioSmart</strong> &nbsp;·&nbsp;
-            Desarrollado por <strong>Romaldi Joel Mosquea</strong> &nbsp;·&nbsp;
-            Matrícula: <strong>20231910</strong> &nbsp;·&nbsp; © 2025
+            <strong>BiblioSmart</strong> ·
+            Desarrollado por <strong>Sheyssi Puente Adames</strong> ·
+            Matricula: <strong>20231166</strong> · © 2026
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
